@@ -77,7 +77,7 @@ function peek(stack){
     }
 
     else{
-        return `The top of the stack is: ${currNode.data}`
+        return currNode.data
     }
    
 }
@@ -177,6 +177,32 @@ function match(exp){
 
 }
 
+// function sortStack(stack){
+
+//     let tempStack = new Stack()
+
+//     let currNode;
+
+//     tempStack.push(stack.pop())
+
+//     while(peek(stack) !== null){
+        
+//         currNode = stack.pop()
+
+//         while((peek(tempStack) !== null) && (currNode < peek(tempStack))){
+
+//             stack.push(tempStack.pop())
+
+//             tempStack.push(currNode)
+//         }
+//     }
+
+//     while(peek(tempStack) !== null){
+//         stack.push(tempStack.pop())
+//     }
+
+// }
+
 
 function main(){
 
@@ -187,8 +213,22 @@ function main(){
     // console.log(is_palindrome("1001"));
     // console.log(is_palindrome("Tauhida"));
 
-    console.log(match('(()'))
-    console.log(match('(())'))
+    // console.log(match('(()'))
+    // console.log(match('(())'))
+
+    let stack = new Stack()
+
+    stack.push(1)
+    stack.push(5)
+    stack.push(4)
+    stack.push(2)
+    stack.push(3)
+
+    console.log(display(stack))
+
+    sortStack(stack)
+
+    console.log(display(stack))
 
 
 }
