@@ -117,7 +117,44 @@ function makeStack(){
 
 }
 
-makeStack()
+function is_palindrome(s){
+
+    s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+
+    let stack = new Stack()
+
+    for(let i = 0; i < s.length; i++){
+
+        stack.push(s[i])
+
+    }
+
+    for(let i = 0; i < s.length; i++){
+
+        //console.log(stack, s[i])
+
+        if(stack.pop() !== s[i]){
+            return false
+        }
+    }
+
+    return true
+}
+
+
+function main(){
+
+    //makeStack()
+
+    // console.log(is_palindrome("dad"));
+    // console.log(is_palindrome("A man, a plan, a canal: Panama"));
+    // console.log(is_palindrome("1001"));
+    // console.log(is_palindrome("Tauhida"));
+
+}
+
+main()
+
 
 
 
