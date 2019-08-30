@@ -27,8 +27,10 @@ class Stack {
            add data to the new node, and
            have the pointer point to the top */
 
-        const node = new _Node(data, this.top)
-        this.top = node
+        else{
+            const node = new _Node(data, this.top)
+            this.top = node
+        }
     }
 
 
@@ -141,6 +143,40 @@ function is_palindrome(s){
     return true
 }
 
+function match(exp){
+
+    let stack = new Stack()
+
+    for(let i = 0; i < exp.length; i++){
+
+        //console.log(exp[i])
+
+        if(exp[i] === '('){
+            stack.push(exp[i])
+            console.log(exp[i])
+           
+        }
+
+        else if(exp[i] === ')'){
+            stack.pop()
+            console.log(exp[i])
+
+        }
+
+    }
+
+    console.log('top', stack.top)
+
+    if(stack.top === null){
+        return 'All parentheses match';
+    }
+
+    else{
+        return 'You are missing at least 1 parentheses';
+    }
+
+}
+
 
 function main(){
 
@@ -150,6 +186,10 @@ function main(){
     // console.log(is_palindrome("A man, a plan, a canal: Panama"));
     // console.log(is_palindrome("1001"));
     // console.log(is_palindrome("Tauhida"));
+
+    console.log(match('(()'))
+    console.log(match('(())'))
+
 
 }
 
